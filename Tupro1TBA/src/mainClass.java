@@ -17,7 +17,7 @@ public class mainClass {
         // TODO code application logic here
         
         String inputan = "saya Rizkiyana Prima putra";
-        
+        System.out.println("\\s");
     }
     
 }
