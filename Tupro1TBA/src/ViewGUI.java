@@ -14,12 +14,12 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author NANON
  */
-public class GUIXXX extends javax.swing.JFrame {
+public class ViewGUI extends javax.swing.JFrame {
 
     /**
      * Creates new form ViewGUI
      */
-    public GUIXXX() {
+    public ViewGUI() {
         initComponents();
     }
 
@@ -203,20 +203,20 @@ public class GUIXXX extends javax.swing.JFrame {
 //                }
 //            }
 //        } catch (ClassNotFoundException ex) {
-//            java.util.logging.Logger.getLogger(GUIXXX.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//            java.util.logging.Logger.getLogger(ViewGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 //        } catch (InstantiationException ex) {
-//            java.util.logging.Logger.getLogger(GUIXXX.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//            java.util.logging.Logger.getLogger(ViewGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 //        } catch (IllegalAccessException ex) {
-//            java.util.logging.Logger.getLogger(GUIXXX.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//            java.util.logging.Logger.getLogger(ViewGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 //        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-//            java.util.logging.Logger.getLogger(GUIXXX.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//            java.util.logging.Logger.getLogger(ViewGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 //        }
 //        //</editor-fold>
 //
 //        /* Create and display the form */
 //        java.awt.EventQueue.invokeLater(new Runnable() {
 //            public void run() {
-//                new GUIXXX().setVisible(true);
+//                new ViewGUI().setVisible(true);
 //            }
 //        });
 //    }
