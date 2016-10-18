@@ -22,6 +22,10 @@ public class ViewGUI extends javax.swing.JFrame {
     public ViewGUI() {
         initComponents();
     }
+    
+    public javax.swing.JTextField getJTextFieldString() {
+        return jTextFieldString;
+    }
 
     public Object getBtnProcess() {
         return jButtonProcess;
