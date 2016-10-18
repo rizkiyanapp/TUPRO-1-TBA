@@ -9,15 +9,36 @@
  * @author NANON
  */
 public class Word {
-    
+
     private String word;
     private String type;
     private int state;
-    
+    private int tokenLexic;
+
     public Word(String word, String type, int state) {
         this.word = word;
         this.type = type;
         this.state = state;
+
+        switch (state) {
+            case 1: tokenLexic = 1;
+            case 4: tokenLexic = 2;
+            case 7: tokenLexic = 3;
+            case 9: {
+                if(word.length() == 3) { tokenLexic = 5;}
+                else if(word.length() == 2) {tokenLexic = 4;}
+            }
+            case 12 : tokenLexic = 6;
+            case 16 : tokenLexic = 7;
+            case 17 : tokenLexic = 8;
+            case 18 : tokenLexic = 9;
+            case 19 : tokenLexic = 10;
+            default : tokenLexic = 0;
+        }
+    }
+
+    public int getTokenLexic() {
+        return tokenLexic;
     }
 
     public String getWord() {
@@ -43,5 +64,5 @@ public class Word {
     public void setState(int state) {
         this.state = state;
     }
-    
+
 }

@@ -15,9 +15,7 @@ public class mainClass {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        
-        String inputan = "saya Rizkiyana Prima putra";
-        System.out.println("\\s");
+        Controller controller = new Controller();
     }
     
 }

@@ -84,6 +84,8 @@ public class ViewGUI extends javax.swing.JFrame {
         jTableLexic = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 255, 255));
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         jLabelTittle.setBackground(new java.awt.Color(255, 255, 255));
         jLabelTittle.setFont(new java.awt.Font("Open Sans Condensed", 0, 36)); // NOI18N
