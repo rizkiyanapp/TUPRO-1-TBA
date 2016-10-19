@@ -23,6 +23,10 @@ public class GUI extends javax.swing.JFrame {
         Controller controller = new Controller(model);
         this.setVisible(true);
     }
+    
+    public void setTotal(String s) {
+        txtTotalTokenLexic.setText(s);
+    }
 
     public Object getBtnProcess() {
         return buttonProcess;
@@ -114,6 +118,7 @@ public class GUI extends javax.swing.JFrame {
         jLabel2.setText("String Input :");
 
         jLabel3.setFont(new java.awt.Font("Open Sans Condensed", 0, 36)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 102, 204));
         jLabel3.setText("LEXICAL ANALYZER");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -203,6 +208,7 @@ public class GUI extends javax.swing.JFrame {
 
         private Application model;
         private String stringinput;
+        private int totalToken;
 
         public Controller(Application model) {
             this.model = model;
@@ -212,6 +218,7 @@ public class GUI extends javax.swing.JFrame {
         @Override
         public void actionPerformed(ActionEvent ae) {
             if (ae.getSource().equals(getBtnProcess())) {
+                totalToken = 0;
                 stringinput = getStringInput();
                 System.out.println(stringinput);
                 model.process(stringinput);
@@ -222,18 +229,14 @@ public class GUI extends javax.swing.JFrame {
                     getTableLexic().setValueAt(w.getWord(), i, 0);
                     getTableLexic().setValueAt(w.getType(), i, 1);
                     getTableLexic().setValueAt(w.getTokenLexic(), i, 2);
-                    
-                    System.out.println("Word : " + w.getWord());
-                    System.out.println("Type : " + w.getType());
-                    System.out.println("State : " + w.getState());
-                    System.out.println("Token : " + w.getTokenLexic());
-                    System.out.println("");
-                    
+                    totalToken += w.getTokenLexic();
                     i++;
                 }
+                setTotal("" + totalToken);
             } else if (ae.getSource().equals(getBtnReset())) {
                 reset();
                 stringinput = "";
+                totalToken = 0;
             }
         }
     }
