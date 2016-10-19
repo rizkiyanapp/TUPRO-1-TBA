@@ -15,26 +15,26 @@ public class Word {
     private int state;
     private int tokenLexic;
 
-    public Word(String word, String type, int state) {
+    public Word(String word, int state) {
         this.word = word;
         this.type = type;
         this.state = state;
 
         switch (state) {
-            case 1: this.tokenLexic = 1; break;
-            case 4: this.tokenLexic = 2; break;
-            case 7: this.tokenLexic = 3; break;
+            case 1: this.tokenLexic = 1; this.type = "Operand"; break;
+            case 4: this.tokenLexic = 2; this.type = "Operator"; break;
+            case 7: this.tokenLexic = 3; this.type = "Operator"; break;
             case 9: {
-                if(word.length() == 3) { this.tokenLexic = 5;}
-                else if(word.length() == 2) {this.tokenLexic = 4;}
+                if(word.length() == 3) { this.tokenLexic = 5; this.type = "Operator";}
+                else if(word.length() == 2) {this.tokenLexic = 4; this.type = "Operator";}
                 break;
             }
-            case 12 : this.tokenLexic = 6; break;
-            case 16 : this.tokenLexic = 7; break;
-            case 17 : this.tokenLexic = 8; break;
-            case 18 : this.tokenLexic = 9; break;
-            case 19 : this.tokenLexic = 10; break;
-            default : this.tokenLexic = 0; break;
+            case 12 : this.tokenLexic = 6; this.type = "Operator"; break;
+            case 16 : this.tokenLexic = 7; this.type = "Operator"; break;
+            case 17 : this.tokenLexic = 8; this.type = "Operator"; break;
+            case 18 : this.tokenLexic = 9; this.type = "Grouping"; break;
+            case 19 : this.tokenLexic = 10; this.type = "Grouping"; break;
+            default : this.tokenLexic = 0; this.type = "ERROR!"; break;
         }
     }
 
