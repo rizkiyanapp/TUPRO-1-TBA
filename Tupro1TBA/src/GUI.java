@@ -100,24 +100,24 @@ public class GUI extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tableLexic);
 
-        buttonReset.setFont(new java.awt.Font("Open Sans Condensed", 0, 12)); // NOI18N
+        buttonReset.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
         buttonReset.setText("RESET");
 
-        buttonProcess.setFont(new java.awt.Font("Open Sans Condensed", 0, 12)); // NOI18N
+        buttonProcess.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
         buttonProcess.setText("PROCESS");
 
         txtTotalTokenLexic.setEditable(false);
         txtTotalTokenLexic.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
 
-        jLabel1.setFont(new java.awt.Font("Open Sans Condensed", 0, 12)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
         jLabel1.setText("Total Lexic Token :");
 
         txtStringInput.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
 
-        jLabel2.setFont(new java.awt.Font("Open Sans Condensed", 0, 12)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
         jLabel2.setText("String Input :");
 
-        jLabel3.setFont(new java.awt.Font("Open Sans Condensed", 0, 36)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Franklin Gothic Demi Cond", 0, 36)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 102, 204));
         jLabel3.setText("LEXICAL ANALYZER");
 
@@ -127,7 +127,7 @@ public class GUI extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 479, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 483, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
@@ -157,8 +157,8 @@ public class GUI extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(146, 146, 146)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 265, Short.MAX_VALUE)
+                .addContainerGap(139, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
