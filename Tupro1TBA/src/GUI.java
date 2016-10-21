@@ -81,6 +81,8 @@ public class GUI extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
+        jScrollPane1.setBackground(new java.awt.Color(255, 255, 255));
+
         tableLexic.setFont(new java.awt.Font("Calibri", 0, 11)); // NOI18N
         tableLexic.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -100,13 +102,18 @@ public class GUI extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tableLexic);
 
+        buttonReset.setBackground(new java.awt.Color(0, 102, 204));
         buttonReset.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
+        buttonReset.setForeground(new java.awt.Color(255, 255, 255));
         buttonReset.setText("RESET");
 
+        buttonProcess.setBackground(new java.awt.Color(0, 102, 204));
         buttonProcess.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
+        buttonProcess.setForeground(new java.awt.Color(255, 255, 255));
         buttonProcess.setText("PROCESS");
 
         txtTotalTokenLexic.setEditable(false);
+        txtTotalTokenLexic.setBackground(new java.awt.Color(255, 255, 255));
         txtTotalTokenLexic.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
 
         jLabel1.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
@@ -129,6 +136,10 @@ public class GUI extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 483, Short.MAX_VALUE)
                 .addContainerGap())
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(38, 38, 38)
+                .addComponent(jLabel2)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addContainerGap()
@@ -138,11 +149,7 @@ public class GUI extends javax.swing.JFrame {
                             .addComponent(jLabel3)
                             .addGap(124, 124, 124))
                         .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel1)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addGap(27, 27, 27)
-                                    .addComponent(jLabel2)))
+                            .addComponent(jLabel1)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(txtStringInput, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -157,7 +164,9 @@ public class GUI extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(139, Short.MAX_VALUE)
+                .addContainerGap(69, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addGap(65, 65, 65)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -165,9 +174,7 @@ public class GUI extends javax.swing.JFrame {
                     .addContainerGap()
                     .addComponent(jLabel3)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txtStringInput, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel2))
+                    .addComponent(txtStringInput, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(buttonReset, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -219,7 +226,7 @@ public class GUI extends javax.swing.JFrame {
         public void actionPerformed(ActionEvent ae) {
             if (ae.getSource().equals(getBtnProcess())) {
                 totalToken = 0;
-                stringinput = getStringInput();
+                stringinput = getStringInput().toLowerCase();
                 System.out.println(stringinput);
                 model.process(stringinput);
                 int i = 0;
