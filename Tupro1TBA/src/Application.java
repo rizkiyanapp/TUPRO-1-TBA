@@ -1,5 +1,6 @@
 
 import java.util.ArrayList;
+import java.util.Stack;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -14,6 +15,7 @@ public class Application {
 
     private String word;
     private int state;
+    private String classifier;
     private ArrayList<Word> wordList = new ArrayList();
 
     public void process(String stringinput) {
@@ -381,6 +383,71 @@ public class Application {
             }
             i++;
         }
+    }
+
+    public String isValid(ArrayList<Word> wordList) {
+        Stack stack = new Stack();
+        stack.push("#");
+        state = 1;
+        if (wordList.isEmpty() == false) {
+            for (Word word : wordList) {
+                switch (state) {
+                    case 1: {
+                        if (word.getTokenLexic() == 1) {
+                            state = 2;
+                        } else if (word.getTokenLexic() == 2) {
+                            state = 1;
+                        } else if (word.getTokenLexic() == 6) {
+                            state = 1;
+                            stack.push("X");
+                        } else if (word.getTokenLexic() == 9) {
+                            state = 1;
+                            stack.push("Y");
+                        } else {
+                            return "TIDAK VALID";
+                        }
+                        break;
+                    }
+                    case 2: {
+                        if (word.getTokenLexic() == 2) {
+                            state = 1;
+                        } else if (word.getTokenLexic() == 3) {
+                            state = 1;
+                        } else if (word.getTokenLexic() == 4) {
+                            state = 1;
+                        } else if (word.getTokenLexic() == 5) {
+                            state = 1;
+                        } else if (word.getTokenLexic() == 6) {
+                            state = 1;
+                            stack.push("X");
+                        } else if (word.getTokenLexic() == 7) {
+                            state = 1;
+                            classifier = (String) stack.pop();
+                            if (!"X".equals(classifier)) {
+                                return "TIDAK VALID";
+                            }
+                        } else if (word.getTokenLexic() == 8) {
+                            state = 1;
+                        } else if (word.getTokenLexic() == 10) {
+                            state = 2;
+                            classifier = (String) stack.pop();
+                            if (!"Y".equals(classifier)) {
+                                return "TIDAK VALID";
+                            }
+                        } else {
+                            return "TIDAK VALID";
+                        }
+                        break;
+                    }
+                }
+            }
+            if ((stack.size() == 1) && (state == 2)) {
+                return "VALID";
+            } else {
+                return "TIDAK VALID";
+            }
+        }
+        return null;
     }
 
     public ArrayList<Word> getWordList() {
